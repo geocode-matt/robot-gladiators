@@ -15,6 +15,7 @@ var enemyNames = ["Roborto", "Amy Android", "Robo Trumble"];
 console.log(enemyNames);
 var enemyHealth = 40;
 var enemyAttack = 12;
+
 var fight = function (enemyName) {
     while (playerHealth > 0 && enemyHealth > 0) {
         // ask user if they'd liked to fight or run
@@ -32,6 +33,7 @@ var fight = function (enemyName) {
                 break;
             }
         }
+
         // remove enemy's health by subtracting the amount set in the playerAttack variable
         enemyHealth = enemyHealth - playerAttack;
         console.log(
@@ -62,7 +64,10 @@ var fight = function (enemyName) {
         }
     }
 };
-for (var i = 0; i < enemyNames.length; i++) {
+
+// function to start a new game
+var startGame = function() {
+  for (var i = 0; i < enemyNames.length; i++) {
     if (playerHealth > 0) {
         // let user know what round they are in, remember that arrays start at 0 so it needs to have 1 added to it
         window.alert("Welcome to Robot Gladiators! Round " + (i + 1));
@@ -80,3 +85,7 @@ for (var i = 0; i < enemyNames.length; i++) {
         break;
     }
 }
+};
+
+// start the game when the page loads
+startGame();
